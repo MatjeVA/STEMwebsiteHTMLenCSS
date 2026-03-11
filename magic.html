@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>FNAF explained</title>
+    <link rel="icon" type="image/png" href="hoofdfreddy.png">
+    <style>
+        .goldenfreddy {
+            transform: translate(1000px, -230px);
+        }
+
+        .magisch {
+            color: rgb(255, 255, 255);
+            font-size: xx-large;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+        }
+
+        body {
+            background-color: #151412;
+            margin: 0;
+            padding: 0;
+        }
+
+        h2,
+        p {
+            margin: 10px;
+        }
+
+        ul.menu {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+            background-color: #42413e;
+            overflow: hidden;
+            font-family: cursive;
+
+        }
+
+        ul.menu li {
+            float: left;
+        }
+
+        ul.menu li a {
+            display: block;
+            color: white;
+            text-align: center;
+            padding: 14px 16px;
+            text-decoration: none;
+        }
+
+        ul.menu li a:hover {
+            background-color: #474747;
+        }
+
+        ul li a.active {
+            background-color: #803ca8;
+        }
+
+        .popup {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -40%);
+            display: none;
+            z-index: 999;
+        }
+
+        .popup img {
+            width: 400px;
+        }
+    </style>
+</head>
+
+<body>
+    <nav>
+        <ul class="menu">
+            <li><a href="index.html">index</a></li>
+            <li><a href="fotos.html">foto's</a></li>
+            <li><a class="active" href="magic.html">magic</a></li>
+            <li style="float:right"><a
+                    href="https://freddy-fazbears-pizza.fandom.com/wiki/Five_Nights_at_Freddy%27s_Wiki"
+                    target="_blank">wiki</a></li>
+        </ul>
+    </nav>
+    <div class="magisch">
+        <p>
+            Druk niet op de knop.
+        </p>
+        <img src="rode knop.png" id="rodeknop" style="cursor:pointer;">
+        <audio id="soundEffect" src="foxyjumpscare.mp3"></audio>
+    </div>
+    <img class="goldenfreddy" src="goldenfreddy.webp" style="width:300px">
+    <div class="popup" id="gifPopup">
+        <img src="foxyjumpscare.webp" style="width:900px">
+    </div>
+    <script>
+        document.getElementById("rodeknop").onclick = function () {
+            let popup = document.getElementById("gifPopup");
+            let geluid = document.getElementById("soundEffect");
+            
+            popup.style.display = "block";
+            geluid.play();
+
+            setTimeout(function () {
+                popup.style.display = "none";
+            }, 2000); // 3000 milliseconden = 3 seconden
+        };
+    </script>
+</body>
+
+</html>
